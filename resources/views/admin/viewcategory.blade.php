@@ -22,8 +22,8 @@
         <tr style="border-bottom: 1px solid #ddd;">
             <td style="padding: 12px;">{{$category->id}}</td>
             <td style="padding: 12px;">{{$category->category}}</td>
+            <td style="padding: 12px;"><a href="" style="color:green;">Update</a></td>
             <td style="padding: 12px;"><a href="{{route('admin.categorydelete',$category->id)}}" onclick="return confirm('Are you sure?')">Delete</a></td>
-
         </tr>
         @endforeach
     </tbody>
