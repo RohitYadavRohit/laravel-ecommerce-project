@@ -8,6 +8,12 @@
     </div>
 @endif
 
+@if(session('deleteproduct_message'))
+    <div style="margin-bottom:10px;color: black; background-color: orangered;">
+        {{session('deleteproduct_message')}}
+    </div>
+@endif
+
 <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
     <thead>
         <tr style="background-color: #f2f2f2">
@@ -34,7 +40,7 @@
             <td style="padding: 12px;">{{$product->product_category}}</td>
             <td style="padding: 12px;">
                 <a href="" style="color:green;">Update</a>
-                <a href="" onclick="return confirm('Are you sure?')">Delete</a>
+                <a href="{{route('admin.deleteproduct',$product->id)}}" onclick="return confirm('Are you sure?')">Delete</a>
             </td>
         </tr>
         @endforeach
