@@ -14,6 +14,16 @@
     </div>
 @endif
 
+            <div class="list-inline-item">
+              <form action="{{route('admin.searchproduct')}}" method="post">
+                @csrf
+                <div class="form-group">
+                  <input type="search" name="search" placeholder="What are you searching for...">
+                  <button type="submit" class="submit">Search</button>
+                </div>
+              </form>
+            </div>
+
 <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
     <thead>
         <tr style="background-color: #f2f2f2">

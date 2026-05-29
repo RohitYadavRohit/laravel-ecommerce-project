@@ -29,6 +29,9 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/update_product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateproduct');
     Route::post('/update_product/{id}', [AdminController::class, 'postUpdateProduct'])->name('admin.postupdateproduct');   
     
+    Route::any('/search', [AdminController::class, 'searchProduct'])->name('admin.searchproduct');   
+    
+    
     
 });
 
