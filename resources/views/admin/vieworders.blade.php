@@ -11,7 +11,7 @@
             <th style="padding:12px; text-align: left; border-bottom: 1px soid #ddd;">Product</th>
             <th style="padding:12px; text-align: left; border-bottom: 1px soid #ddd;">Price</th>
             <th style="padding:12px; text-align: left; border-bottom: 1px soid #ddd;">Product Image</th>
-            <th style="padding:12px; text-align: left; border-bottom: 1px soid #ddd;">Action</th>
+            <th style="padding:12px; text-align: left; border-bottom: 1px soid #ddd;">Status</th>
         </tr>
 
     </thead>
@@ -28,7 +28,15 @@
                 <img style="width:150px;" src="{{asset('products/'.$order->product->product_image)}}" alt="">
             </td>
             <td style="padding: 12px;">
-
+                <form action="{{route('admin.change_status',$order->id)}}" method="post">
+                    @csrf
+                    <select name="status" id="">
+                        <option value="{{$order->status}}">{{$order->status}}</option>
+                        <option value="Delivered">Delivered</option>
+                        <option value="pending">pending</option>
+                    </select>
+                    <input type="submit" name="submit" value="submit" onclick="return confirm('Are You Sure?')">
+                </form>
             </td>
         </tr>
         @endforeach
