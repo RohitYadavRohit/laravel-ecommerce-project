@@ -42,6 +42,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::any('/search', [AdminController::class, 'searchProduct'])->name('admin.searchproduct'); 
     Route::get('/vieworder', [AdminController::class, 'viewOrder'])->name('admin.vieworder');  
     Route::post('/change_status/{id}', [AdminController::class, 'changeStatus'])->name('admin.change_status');
+    Route::get('/downloadpdf/{id}', [AdminController::class, 'downloadPDF'])->name('admin.downloadpdf');
     
 
 });
