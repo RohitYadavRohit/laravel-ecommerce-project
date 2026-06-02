@@ -9,6 +9,7 @@ use App\Models\ProductCart;
 use App\Models\Order;
 class UserController extends Controller
 {
+    
     public function index(){
         if(Auth::check() && Auth::user()->user_type=="user"){
             return view('dashboard');
